@@ -1,18 +1,20 @@
-import mongo = require('mongodb');
+import mong = require('mongoose');
 
 class NotesFactoryDB {
    
 	dbConnection : string;
-	mongo : mongodb.MongoClient = null;
-        err: boolean;
+	//err: boolean;
   constructor(dbConnection : string)
   {
-	this.dbConnection = dbConnection;
+	  this.dbConnection = dbConnection;
   }
  
-  connect(dbName : string) : boolean
+  connect(dbName : string) : any
   {
+		mong.connect(this.dbConnection + dbName, {useNewUrlParser:true});
+		return mong.connection;
   }
+       
   create(o : any) { 
        
   }
