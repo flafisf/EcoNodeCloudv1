@@ -1,4 +1,4 @@
-export interface IFactory
+export interface IFactoryDB
 {
     readonly dbName : string;
     readonly dbConnection: string;

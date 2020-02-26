@@ -1,12 +1,11 @@
-import { FactoryDB } from "FactoryDB";
-import { IEntity } from "IEntity";
+/// <reference path="IEntity.ts" />
 
-export class Entity extends IEntity
+export class Entity implements IEntity
 {
-    private mongo : FactoryDB.GetInstance;
-
-    constructor(dbConnection: string)
+    name : string;
+   
+    constructor(name:string)
     {
-        super();
+        this.name = name;
     }
 }

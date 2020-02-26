@@ -1,29 +1,49 @@
-import { Document, Model, model, Types, Schema, Query } from "mongoose"
-import { IEntity } from './IEntity'
 
-export class FactoryDB implements IEntity
+import { Document, Model, model, Types, Schema, Query } from "mongoose"
+import { IFactoryDB } from "./IFactoryDB";
+
+export class FactoryDB implements IFactoryDB
 {
    
-	protected dbConnection : string = '';
-  protected dbName: string = '';
-  
-  protected mong : Document.connection = null;
-
+	dbConnection : string = '';
+  dbName: string = '';
+  dbPort: number = 27017;
+   
   constructor(dbConnection : string, dbName: string)
   {
     this.dbConnection = dbConnection;
     this.dbName = dbName;
   }
 
-  connect() : any
+  connect() : boolean
   {
-    mong.connect(this.dbConnection + this.dbName, {useNewUrlParser:true});
+    //mong.connect(this.dbConnection + this.dbName, {useNewUrlParser:true});
   
-	  return mong.connection;
+	  return false; // mong.connection;
   }
        
-  create(o : any) { 
-       
+  create(o : any) : boolean 
+  { 
+       return true;
   }
+
+  read() : boolean
+  {
+    return true;
+  }
+
+  update(o:any)
+  {
+      return true;
+  }
+
+  delete(o:any)
+  {
+    return true;
+  }
+
+
+
+
 }
 
