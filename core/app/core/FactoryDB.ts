@@ -1,9 +1,10 @@
-import mong = require('mongoose');
+import { Document, Model, model, Types, Schema, Query } from "mongoose"
 
 class NotesFactoryDB {
    
 	dbConnection : string;
-	//err: boolean;
+	dbName: string;
+
   constructor(dbConnection : string)
   {
 	  this.dbConnection = dbConnection;
@@ -11,8 +12,8 @@ class NotesFactoryDB {
  
   connect(dbName : string) : any
   {
-		mong.connect(this.dbConnection + dbName, {useNewUrlParser:true});
-		return mong.connection;
+	mong.connect(this.dbConnection + dbName, {useNewUrlParser:true});
+	return mong.connection;
   }
        
   create(o : any) { 

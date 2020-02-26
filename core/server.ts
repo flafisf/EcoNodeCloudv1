@@ -1,12 +1,14 @@
-const express = require('express');
-const mongo = require('mongodb').MongoClient;
-const bodyParser = require('body-parser');
+import express = require("express");
+import bodyParser = require('body-parser');
 
-const url_db = 'mongodb://172.17.0.2:27017/notes --username core --pasword .123.456';
-
-const app = express();
-
-const port = 8000;
+const app: express.Application = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
 
+app.post('/', function(req, res) {
+	res.send(req.body);
+});
+
+app.listen(3000, function() {
+     console.log('We are live on port 3000!');
+});
