@@ -7,8 +7,9 @@ class Highlight extends Entity
         super('Highlight');
     }
 
-    private highlightId: number;
-    
+    private highlightId: number = 0;
+
+
 
     getNameClass() : string {
         return this.name;
