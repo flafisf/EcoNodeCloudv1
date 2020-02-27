@@ -22,7 +22,7 @@ export class FactoryDB implements IFactoryDB
 	  return false; // mong.connection;
   }
        
-  create(o : any) : boolean 
+  create(o: object | null): boolean
   { 
        return true;
   }
@@ -32,16 +32,25 @@ export class FactoryDB implements IFactoryDB
     return true;
   }
 
-  update(o:any)
+  update(o: object | null) : boolean
   {
       return true;
   }
 
-  delete(o:any)
+  delete(o: object | null) : boolean
   {
     return true;
   }
 
+  commit() 
+  {
+        // realizar commit
+  }
+
+  rollBack()
+  {
+    // vuelta atrás
+  }
 
 
 
