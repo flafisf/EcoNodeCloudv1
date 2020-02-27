@@ -7,7 +7,7 @@ class Article extends Entity
         super('Hits');
     }
 
-    private hits : Partial<Article>;
+    private hits : Array<Article> = new Array<Article>(100);
     private nbHits: number = 0;
     private nbPages: number = 0;
     private hitsPerPage: number = 0;
